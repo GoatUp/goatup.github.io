@@ -1,13 +1,17 @@
 # 白嫖系列之博客
 
 
+fork
+
+<!--more-->
+
 ## 前言
 
-​	云端，省事，不花钱，新鲜感过后低维护成本。
+云端，省事，不花钱，新鲜感过后低维护成本。
 
 ### Ⅰ 整体架构
 
-​	GitHub Pages + Hugo + GitHub Actions + Domain
+GitHub Pages + Hugo + GitHub Actions + Domain
 
 ### Ⅱ 工作流程
 
@@ -19,6 +23,7 @@
 4. （可选）绑定自定义域名
 
 博客编辑器推荐 Typora，域名注册和解析推荐 NameSoli，文章推送最好写个 deploy.bat。
+
 
 ## GitHub 创建仓库
 
@@ -36,34 +41,34 @@
 
 ### Ⅰ 创建 Github Pages
 
-​	创建 `goatup.github.io` 仓库，仓库名必须为 [username].github.io，必须使用 main 分支，默认权限 Public：
+创建 `goatup.github.io` 仓库，仓库名必须为 [username].github.io，必须使用 main 分支，默认权限 Public：
 ![image-20210630121632868](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630121632.png)
 
 ### Ⅱ 创建源码仓库
 
-​	仓库名随意，分支随意，权限随意：
+仓库名随意，分支随意，权限随意：
 ![image-20210630121324410](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630121324.png)
 
 ### Ⅲ 为两个仓库绑定 SSH Key
 
-​	当我们通过 Git 提交源码到 `goatup.github.io.source` ，Github Actions 会编译成静态文件并通过 Git Pull 到 `goatup.github.io` ，因此这一步需要 Git 账号认证。
+当我们通过 Git 提交源码到 `goatup.github.io.source` ，Github Actions 会编译成静态文件并通过 Git Pull 到 `goatup.github.io` ，因此这一步需要 Git 账号认证。
 
-```bash
-# 打开 cmd, Powershell, git bash 任意一个，输入
+```shell
+# 打开 cmd, Powershell, git shell 任意一个，输入
 ssh-keygen -t rsa -C "your email address"
 ```
 
 ![image-20210630122127680](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630122127.png)
 
-​	这两步比较重要，我们要将生成的 **Public Key** 添加到 `goatup.github.io` 仓库，勾选可写权限：![image-20210630123013572](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630123013.png)
+这两步比较重要，我们要将生成的 **Public Key** 添加到 `goatup.github.io` 仓库，勾选可写权限：![image-20210630123013572](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630123013.png)
 
-​	然后将 **Private Key** 添加到 `goatup.github.io.source` 仓库，这里 **Secrets** 变量名记住哈, 后面会用到。![image-20210630124231219](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630124231.png)
+然后将 **Private Key** 添加到 `goatup.github.io.source` 仓库，这里 **Secrets** 变量名记住哈, 后面会用到。![image-20210630124231219](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630124231.png)
 
 ### Ⅳ 为 Hugo 初始化做准备
 
-​	将 `goatup.github.io.source` 仓库克隆到本地，开始初始化 Hugo 系统。
+将 `goatup.github.io.source` 仓库克隆到本地，开始初始化 Hugo 系统。
 
-```bash
+```shell
 # 选取一个目标
 cd O:\Documents\
 
@@ -76,9 +81,10 @@ git clone https://username:password@github.com/username/repo_name.git
 cd goatup.github.io.source
 ```
 
+
 ## Hugo初始化
 
-​	使用 Hugo 生成静态博客站点非常简单，具体的步骤和用法可以参考官方文档的 [Quick Start](https://www.gohugo.org/)。
+使用 Hugo 生成静态博客站点非常简单，具体的步骤和用法可以参考官方文档的 [Quick Start](https://www.gohugo.org/)。
 
 ### Ⅰ 两种方式安装Hugo
 
@@ -87,16 +93,16 @@ cd goatup.github.io.source
 
 ### Ⅱ 初始化
 
-​	创建一个新的站点。
+创建一个新的站点。
 
-```bash
+```shell
 # 在当前目录生成 Hugo 源码
 hugo new site . --force	//在非空目录中初始化
 ```
 
 ​	这会生成一个特定目录结构的项目文件夹，用来维护所有的站点内容，后续的操作和命令都会在这个根目录下执行：
 
-```bash
+```shell
 .
 ├── archetypes # 内容类型，在创建新内容时自动生成内容的配置
 ├── content # 网站内容，Markdown 文件
@@ -111,62 +117,64 @@ hugo new site . --force	//在非空目录中初始化
 
 - 你可以不执行这一命令使用默认主题。
 
-  安装主题有三种方式：
+安装主题有三种方式：
 
-  1. 直接下载主题压缩文件，解压到 theme/ 目录下。
-  2. 通过 git submodule(推荐) 或 git clone 安装：
-  3. 通过 Hugo Modules 安装，需本机安装 GO 1.12 及以上版本，略。	
+1. 直接下载主题压缩文件，解压到 theme/ 目录下。
+2. 通过 git submodule(推荐) 或 git clone 安装：
+3. 通过 Hugo Modules 安装，需本机安装 GO 1.12 及以上版本，略。	
 
-  ```shell
-  git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
-  ```
+```shell
+git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
+```
 
 - 安装后需要启用主题，方法是将主题名称写入到根目录下的默认配置文件 config.toml：
 
-  ```shell
-  echo 'theme = "LoveIt"' >> config.toml
-    或
-  cp themes/LoveIt/exampleSite/config.toml .	//这里需要修改主题路径 themeDir 配置，将其注释掉
-  ```
+```shell
+echo 'theme = "LoveIt"' >> config.toml
+  或
+cp themes/LoveIt/exampleSite/config.toml .	#这里需要修改主题路径 themeDir 配置，将其注释掉
+```
 
 
 ### Ⅳ 启动 Hugo 预览服务器
 
-​	Hugo 可以启动一个 Web 服务器，同时构建站点内容到内存中并检测到文件更改后重新渲染，方便我们在开发环境实时预览对站点所做的更改。
+Hugo 可以启动一个 Web 服务器，同时构建站点内容到内存中并检测到文件更改后重新渲染，方便我们在开发环境实时预览对站点所做的更改。
 
-```bash
+```shell
 hugo server -D
 ```
 
-​	添加 -D 选项以输出草稿状态的文章，执行后可通过 http://localhost:1313/ 访问站点
+添加 -D 选项以输出草稿状态的文章，执行后可通过 http://localhost:1313/ 访问站点
+
 
 ## 通过 GitHub Pages 发布
 
-​	此段为科普，帮助理解，可跳过。
+此段为科普，帮助理解，可跳过。
 
-​	这一步 Hugo 的官方文档在 [Host on GitHub](https://gohugo.io/hosting-and-deployment/hosting-on-github/) 中进行了详细的介绍，并且还很贴心的提供了自动化操作的 Shell 脚本。有两种方式：
+这一步 Hugo 的官方文档在 [Host on GitHub](https://gohugo.io/hosting-and-deployment/hosting-on-github/) 中进行了详细的介绍，并且还很贴心的提供了自动化操作的 Shell 脚本。有两种方式：
 
 1. **通过个人主页发布**：必须创建一个 `<USERNAME>.github.io` 仓库来托管生成的静态内容，发布后的域名为 `https://<USERNAME>.github.io`。
 2. **通过项目主页发布**：可以随意创建 `<PROJECT_NAME>` 仓库，发布后的域名为 `https://<USERNAME>.github.io/<PROJECT_NAME>`。
 
-​	建议非特殊情况下使用第 1 种方式，原因是许多主题都不能很好的支持第 2 种，具体来说是将 `config.toml` 的 `baseURL` 设置为含子路径的地址时，不能正确的处理所有资源的构建位置。
+建议非特殊情况下使用第 1 种方式，原因是许多主题都不能很好的支持第 2 种，具体来说是将 `config.toml` 的 `baseURL` 设置为含子路径的地址时，不能正确的处理所有资源的构建位置。
+
 
 ## 通过 GitHub Actions 自动部署
 
-​	目前我们的「创作-发布」流程如下：
+目前我们的「创作-发布」流程如下：
 
 1. 在项目仓库编辑原始内容并进行版本管理。
 2. 执行自动脚本生成静态站点并推送到个人主页仓库完成发布。
 
-​	这套流程已经很流畅，但还有一些改进空间：我们可以使用 [GitHub Actions](https://github.com/features/actions)，在每次向远程的项目仓库推送原始内容更改时自动执行第 2 步进行发布。
+这套流程已经很流畅，但还有一些改进空间：我们可以使用 [GitHub Actions](https://github.com/features/actions)，在每次向远程的项目仓库推送原始内容更改时自动执行第 2 步进行发布。
 
-​	GitHub 上有许多这类自动化部署任务的开源 Actions 项目，我们选择了其中一个简单易用的 [GitHub Actions for Hugo](https://github.com/peaceiris/actions-hugo#getting-started)。具体的操作步骤截图和详细配置项可以查看该项目的 [README](https://github.com/peaceiris/actions-hugo#github-actions-for-hugo)。下面简单介绍下配置过程：
+GitHub 上有许多这类自动化部署任务的开源 Actions 项目，我们选择了其中一个简单易用的 [GitHub Actions for Hugo](https://github.com/peaceiris/actions-hugo#getting-started)。具体的操作步骤截图和详细配置项可以查看该项目的 [README](https://github.com/peaceiris/actions-hugo#github-actions-for-hugo)。下面简单介绍下配置过程：
 
 ![image-20210702185658001](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210702190134.png)
 
-​	点击上面 Actions > New workflow 按钮，直接将以下文件贴进去，修改仓库名和域名即可。
+点击上面 Actions > New workflow 按钮，直接将以下文件贴进去，修改仓库名和域名即可。
 
-```bash
+```yaml
 name: Deploy Hugo Site to Github Pages on Main Branch
 
 on:
@@ -209,18 +217,43 @@ jobs:
 
 ​	如果你觉得满意没问题之后，可以试着推送文章到 Github 找找 bug：
 
-```bash
+```shell
 git add .git commit -m "first commit"git push -u origin mian	# 2021年之前的文章大部分使用 master，不冲突
 ```
 
-​	因为 Github Actions 执行需要一分钟，看到 `goatup.github.io.source` 的灯变绿，就 OK 了。
+​	因为 Github Actions 执行需要一分钟，看到 `goatup.github.io.source` 的灯变绿，就 OK 了。自此，搭建就结束了。我们可以访问 Github 为 `goatup.github.io` 仓库生成的域名： https://goatup.github.io 查看效果
 
-​	自此，搭建就结束了。我们可以访问 Github 为 `goatup.github.io` 仓库生成的域名： https://goatup.github.io 查看效果
 
-​																		附带一份 deploy.bat
+附带一份 deploy.bat
 
-```bash
-git add .git commit -m "first commit"git push -u origin mian	# 2021年之前的文章大部分使用 master，不@echo offset pan=.\public\set repo=https://github.com/goatup/goatup.github.io.source.gitset branch=mainif exist %pan% (    echo "clean public directory"    rd /S /Q %pan%    echo "Hugo again for new site"    hugo) else (    echo "can not find public directory"    echo "Hugo again for new site"    hugo)if exist %pan% (    ::cd %pan%    echo "git commit and push"    ::git init    git add .    git commit -m "update site at %time%"    echo "set remote repository and push forcely"    ::git remote add origin %repo%    git push -f origin main:main -v) else (    echo "can not find public directory, hugo fail!")pause
+```shell
+@echo off
+set pan=.\public\
+set repo=https://github.com/goatup/goatup.github.io.source.git
+set branch=main
+if exist %pan% (
+    echo "clean public directory"
+    rd /S /Q %pan%
+    echo "Hugo again for new site"
+    hugo
+) else (
+    echo "can not find public directory"
+    echo "Hugo again for new site"
+    hugo
+)
+if exist %pan% (
+    ::cd %pan%
+    echo "git commit and push"
+    ::git init
+    git add .
+    git commit -m "update site at %time%"
+    echo "set remote repository and push forcely"
+    ::git remote add origin %repo%
+    git push -f origin main:main -v
+) else (
+    echo "can not find public directory, hugo fail!"
+)
+pause
 ```
 
 ## 个人体验
