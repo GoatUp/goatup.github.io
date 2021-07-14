@@ -42,12 +42,12 @@ GitHub Pages + Hugo + GitHub Actions + Domain
 ### Ⅰ 创建 Github Pages
 
 创建 `goatup.github.io` 仓库，仓库名必须为 [username].github.io，必须使用 main 分支，默认权限 Public：
-![image-20210630121632868](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630121632.png)
+![goatup_github_io](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630121632.png)
 
 ### Ⅱ 创建源码仓库
 
 仓库名随意，分支随意，权限随意：
-![image-20210630121324410](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630121324.png)
+![goatup_github_io_source](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630121324.png)
 
 ### Ⅲ 为两个仓库绑定 SSH Key
 
@@ -58,11 +58,11 @@ GitHub Pages + Hugo + GitHub Actions + Domain
 ssh-keygen -t rsa -C "your email address"
 ```
 
-![image-20210630122127680](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630122127.png)
+![ssh_keygen](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630122127.png)
 
-这两步比较重要，我们要将生成的 **Public Key** 添加到 `goatup.github.io` 仓库，勾选可写权限：![image-20210630123013572](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630123013.png)
+这两步比较重要，我们要将生成的 **Public Key** 添加到 `goatup.github.io` 仓库，勾选可写权限：![Public_Key](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630123013.png)
 
-然后将 **Private Key** 添加到 `goatup.github.io.source` 仓库，这里 **Secrets** 变量名记住哈, 后面会用到。![image-20210630124231219](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630124231.png)
+然后将 **Private Key** 添加到 `goatup.github.io.source` 仓库，这里 **Secrets** 变量名记住哈, 后面会用到。![Private_Key](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210630124231.png)
 
 ### Ⅳ 为 Hugo 初始化做准备
 
@@ -170,7 +170,7 @@ hugo server -D
 
 GitHub 上有许多这类自动化部署任务的开源 Actions 项目，我们选择了其中一个简单易用的 [GitHub Actions for Hugo](https://github.com/peaceiris/actions-hugo#getting-started)。具体的操作步骤截图和详细配置项可以查看该项目的 [README](https://github.com/peaceiris/actions-hugo#github-actions-for-hugo)。下面简单介绍下配置过程：
 
-![image-20210702185658001](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210702190134.png)
+![GitHub_Actions_for_Hugo](https://raw.githubusercontent.com/goatup/blog-images/main/blog%20build/20210702190134.png)
 
 点击上面 Actions > New workflow 按钮，直接将以下文件贴进去，修改仓库名和域名即可。
 

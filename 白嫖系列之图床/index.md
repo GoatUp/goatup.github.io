@@ -36,13 +36,13 @@ Select scopes时，看不懂可全选。
 
 ## 3 PicGo
 
-安装后界面如下：![image-20210629181144054](https://raw.githubusercontent.com/goatup/blog-images/main/image%20hosting/20210629181144.png)
+安装后界面如下：![picgo_intall_interface](https://raw.githubusercontent.com/goatup/blog-images/main/image%20hosting/20210629181144.png)
 
-对应设置即可；![image-20210629181208892](https://raw.githubusercontent.com/goatup/blog-images/main/image%20hosting/20210629181208.png)
+对应设置即可；![picgo_setting_interface](https://raw.githubusercontent.com/goatup/blog-images/main/image%20hosting/20210629181208.png)
 
 ## 4 Typora
 
-自定义安装后，按图配置：![image-20210629181455111](https://raw.githubusercontent.com/goatup/blog-images/main/image%20hosting/20210629181455.png)
+自定义安装后，按图配置：![typora_setting_interface](https://raw.githubusercontent.com/goatup/blog-images/main/image%20hosting/20210629181455.png)
 
 ### 4.1 上传失败解决办法
 

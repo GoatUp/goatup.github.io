@@ -15,7 +15,7 @@
 
 ### 1.3 Salesforce Extensions for VSCode
 
-![image-20210712103821354](https://raw.githubusercontent.com/goatup/blog-images/main/salesforce%20dev/20210712103821.png)
+![Salesforce_Extensions_for_VSCode](https://raw.githubusercontent.com/goatup/blog-images/main/salesforce%20dev/20210712103821.png)
 
 ### 1.4 安装语言包
 
