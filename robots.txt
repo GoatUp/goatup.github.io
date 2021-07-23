@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://zhongyang.online/en/sitemap.xml
+Sitemap: https://zhongyang.online/sitemap.xml
