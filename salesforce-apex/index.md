@@ -74,15 +74,37 @@ Apex 完全在 Lighting 平台上编译、存储和运行。开发人猿编写 A
 
 本教程将展示如何创建简单的 Apex 类和触发器，以及如何将这些组件部署到生产组织。
 
+1. 新建自定义对象
+
+   ![schema_builder](https://raw.githubusercontent.com/goatup/blog-images/main/salesforce%20apex/20210727154033.png)
+
+2. 添加 Apex Class
+
+   两种方法：一种是直接在 Apex Class 中新建，一种是通过第三方插件上传。
+
+   ![apex_class](https://raw.githubusercontent.com/goatup/blog-images/main/salesforce%20apex/20210727154711.png)
+
+3. 添加 Apex Trigger
+
+   ```markdown
+   trigger ContactTrigger on Contact (after insert) {
+   
+       ContactTriggerHandler handler = new ContactTriggerHandler();
+   
+       if (Trigger.isAfter) {
+           if (Trigger.isInsert) {
+               //　取引先責任者を登録時に取引先責任者件数を更新
+               handler.doUpdateContactCnt(Trigger.new);
+           }
+       }
+   }
+   ```
+
 ## Part 2 Apex の作成
 
-## Part 3 Apex の実行
+Apex 就像 Salesforce 的 Java。它可以在 Lighting 平台持久层中添加数据并与之交互。
 
-## Part 4 Apex のデバック、テスト、リリース
-
-
-
-### 2.1 原始数据类型
+### 2.1 データ型および変数
 
 Apex 和 SOAP API 使用相同的原始数据类型，如下：
 
@@ -107,6 +129,56 @@ Apex 和 SOAP API 使用相同的原始数据类型，如下：
 # Datetime = Datetime.now().addHours(9);
 ```
 
-### 2.2 集合类型
+
+
+## Part 3 Apex の実行
+
+### 3.1 Apex Trigger
+
+类似传统数据库里的触发器。在 Salesforce 中，当对 Object 进行插入、更新、删除的操作的时候，会触发某些事件。
+
+触发 `时点` ，在 Salesforce 中有七个（2大类，before 和 after）：
+
+- before insert
+- before update
+- before delete
+- after insert
+- after update
+- after delete
+- after undelete
+
+例如，在需要设置触发器的地方进入对象编辑页面：![trigger_object](https://raw.githubusercontent.com/goatup/blog-images/main/salesforce%20apex/20210727172204.png)
+
+然后点击 `トリガ` ，新建一个 Apex Trigger； ![trigger_new](https://raw.githubusercontent.com/goatup/blog-images/main/salesforce%20apex/20210727172431.png)
+
+![trigger_code](https://raw.githubusercontent.com/goatup/blog-images/main/salesforce%20apex/20210727172741.png)编写完成后勾选 `is active`即可。
+
+**推荐一个 Salesforce 插件：Salesforce DevTools**，不过在 Lighting 模式下 debug 有 bug，只能在 Classic 中debug。![salesforce_devtools](https://raw.githubusercontent.com/goatup/blog-images/main/salesforce%20apex/20210727173611.png)
+
+点击 `参照` ，然后在插件 `Salesforce DevTools` 中可查看 debug 内容。
+
+而我们怎么确定是哪一个 `时点` 触发的呢？是 before insert 还是 after insert？这里我们可以通过13个内置变数判断。
+
+isExecuting - isInsert - isUpdate - isDelete - isBefore - isAfter - isUndelete - 
+
+new - newMap - old - oldMap - operationType - size
+
+```markdown
+trigger AccountTrigger on Account (before insert, after insert) {
+    if (Trigger.isInsert) {
+        if (Trigger.isBefore) {
+     		System.debug('this is the before trigger debug');       
+        } else if (Trigger.isAfter) {
+            System.debug('this is the after trigger debug');
+        } 
+    } else {
+        System.debug('this is the error trigger debug');
+    }
+}
+```
+
+## Part 4 Apex のデバック、テスト、リリース
+
+
 
 
