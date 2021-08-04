@@ -1,4 +1,4 @@
-# WindowsTips
+# Windows Tips
 
 
 保存一些 Windows 上的问题解决方法和小技巧，避免忘记。
