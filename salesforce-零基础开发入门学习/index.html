@@ -1,0 +1,297 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Salesforce 零基础开发入门学习 - Yangs</title><meta name=Description content="About Yangs blog"><meta property="og:title" content="Salesforce 零基础开发入门学习">
+<meta property="og:description" content="想学 Salesforce，日英双语不好怎么办？Cover by 大佬 zero.zhang">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhongyang.online/salesforce-%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/"><meta property="og:image" content="https://zhongyang.online/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-08-06T18:53:01+09:00">
+<meta property="article:modified_time" content="2021-08-06T18:53:01+09:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://zhongyang.online/logo.png">
+<meta name=twitter:title content="Salesforce 零基础开发入门学习">
+<meta name=twitter:description content="想学 Salesforce，日英双语不好怎么办？Cover by 大佬 zero.zhang">
+<meta name=application-name content="Yangs">
+<meta name=apple-mobile-web-app-title content="Yangs"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://zhongyang.online/salesforce-%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/><link rel=prev href=https://zhongyang.online/%E6%9C%89%E6%95%88%E7%BD%91%E5%9D%80/><link rel=next href=https://zhongyang.online/hot-keys-and-plug-ins/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Salesforce 零基础开发入门学习","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/zhongyang.online\/salesforce-%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0\/"},"image":["https:\/\/zhongyang.online\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"Salesforce","wordcount":155,"url":"https:\/\/zhongyang.online\/salesforce-%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0\/","datePublished":"2021-08-06T18:53:01+09:00","dateModified":"2021-08-06T18:53:01+09:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"xxxx","logo":"https:\/\/zhongyang.online\/images\/avatar.png"},"author":{"@type":"Person","name":"Yangs"},"description":""}</script></head>
+<body header-desktop=normal header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'dark'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'dark'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=Yangs><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span><span id=id-1 class=typeit></span></a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> Posts </a><a class=menu-item href=/tags/> Tags </a><a class=menu-item href=/categories/> Categories </a><a class=menu-item href=/about/> About </a><a class=menu-item href=https://github.com/goatup/LoveIt title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=Yangs><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span><span id=id-2 class=typeit></span></a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+Cancel
+</a>
+</div><a class=menu-item href=/posts/ title>Posts</a><a class=menu-item href=/tags/ title>Tags</a><a class=menu-item href=/categories/ title>Categories</a><a class=menu-item href=/about/ title>About</a><a class=menu-item href=https://github.com/goatup/LoveIt title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>Contents</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Salesforce 零基础开发入门学习</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://zhongyang.online title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Yangs</a></span>&nbsp;<span class=post-category>included in <a href=/categories/salesforce/><i class="far fa-folder fa-fw"></i>Salesforce</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-08-06>2021-08-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;155 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;<span id=/salesforce-%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/ class=leancloud_visitors data-flag-title="Salesforce 零基础开发入门学习">
+<i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+</span>&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#一salesforce-相关网站>一、Salesforce 相关网站</a></li>
+<li><a href=#二变量基础知识集合表达式流程控制语句>二、变量基础知识，集合，表达式，流程控制语句</a></li>
+<li><a href=#三sobject及dml操作soql>三、sObject及DML操作（SOQL）</a>
+<ul>
+<li><a href=#1-sobject>1. sObject</a></li>
+<li><a href=#2-soql>2. SOQL</a></li>
+</ul>
+</li>
+<li><a href=#四多表关联下的soql以及表字段data-type详解>四、多表关联下的SOQL以及表字段Data Type详解</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><p>想学 Salesforce，日英双语不好怎么办？Cover by 大佬 <a href=https://www.cnblogs.com/zero-zyq/ target=_blank rel="noopener noreffer">zero.zhang</a></p>
+<hr>
+<h2 id=一salesforce-相关网站>一、Salesforce 相关网站</h2>
+<p>salesforce 开发者官网：<a href=https://developer.salesforce.com/ target=_blank rel="noopener noreffer">https://developer.salesforce.com/</a></p>
+<p>注：此链接可以作为salesforce的门户，找到所需要的大部分资源，比如IDE，PDF开发文档等等。</p>
+<p>salesforce 教学视频：<a href=https://trailhead.salesforce.com/zh-CN target=_blank rel="noopener noreffer">https://trailhead.salesforce.com/zh-CN</a></p>
+<p>注：此链接为您提供全套教学以及考证指导，无论您是管理员、用户还是开发人猿。</p>
+<p>IDE：<a href=https://developer.salesforce.com/tools/vscode/ target=_blank rel="noopener noreffer">https://developer.salesforce.com/tools/vscode/</a></p>
+<p>注：此链接方便无基础人员安装IDE开发环境，里面有详细的操作说明。</p>
+<hr>
+<h2 id=二变量基础知识集合表达式流程控制语句>二、变量基础知识，集合，表达式，流程控制语句</h2>
+<p>salesforce 如果简单的说可以大概分成两个部分：<strong>Apex，VisualForce Page。</strong></p>
+<p>Apex 基本和 Java 语法类似，有如下几种常用的基本变量 Integer，String，Decimal，Double，Long，Boolean，ID。</p>
+<p>集合常用的对象：List<t>，Set<t>，Map<t>，均无子类。</p>
+<p>时间日期常用对象：Datetime，Time，Date。</p>
+<p>其他：Object，sObject(与数据库相关，以后会讲)</p>
+<p>与Java一个最大的区别是：Apex 中基本对象的初始值均为 null。</p>
+<hr>
+<h2 id=三sobject及dml操作soql>三、sObject及DML操作（SOQL）</h2>
+<p>详细了解点击<a href=https://developer.salesforce.com/trailhead/en/module/apex_database target=_blank rel="noopener noreffer">这里</a>，可前往官方网站学习。</p>
+<p>数据库的操作比之Java等语言不同，salesforce使用的是Force.com平台数据库，其数据表一行数据可以理解成一个sObject变量。什么是sObject？</p>
+<h3 id=1-sobject>1. sObject</h3>
+<p>官方定义，sObject指的是存储在Force.com平台数据库的任何对象。</p>
+<p>在Apex中只能使用SOAP API对象名称中声明的一行数据。比如Account数据表对应的API名称为Account，则<code>Account account = new Account();</code>的<code>account</code>就是一个sObject对象。</p>
+<p>有两种快捷方式自定义对象：①設定・オブジェクトマネージャ・作成　②設定・作成(ホーム)</p>
+<h3 id=2-soql>2. SOQL</h3>
+<p>SOQL全称为Salesforce Object Query Language。通过SOQL语句可以对sObject做CRUD操作。</p>
+<p>Apex代码通过表以及列对应的API Name进行CRUD。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-sql data-lang=sql><span class=cm>/*sObject有常用的两种初始化方式
+</span><span class=cm>	第一种为常见的new
+</span><span class=cm>	第二种为new时将参数作为构造函数内容穿进去，多个参数使用&#39;,&#39;分隔   
+</span><span class=cm>*/</span><span class=w>
+</span><span class=w></span><span class=n>Student__c</span><span class=w> </span><span class=n>student1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Student</span><span class=p>(</span><span class=n>Name__c</span><span class=o>=</span><span class=s1>&#39;student1&#39;</span><span class=p>);</span><span class=w>
+</span><span class=w></span><span class=n>Student__c</span><span class=w> </span><span class=n>student2</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Student</span><span class=p>();</span><span class=w>
+</span><span class=w></span><span class=n>student2</span><span class=p>.</span><span class=n>Name__c</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s1>&#39;student2&#39;</span><span class=p>;</span><span class=w>
+</span><span class=w> 
+</span><span class=w></span><span class=o>//</span><span class=err>增加一条学生记录</span><span class=c1>--&gt; insert
+</span><span class=c1></span><span class=k>insert</span><span class=w> </span><span class=n>student1</span><span class=p>;</span><span class=o>//</span><span class=n>SOQL</span><span class=w> </span><span class=err>增加记录的简便写法，同</span><span class=k>Database</span><span class=p>.</span><span class=k>insert</span><span class=p>(</span><span class=n>student1</span><span class=p>),</span><span class=err>详见文档</span><span class=w>
+</span><span class=w></span><span class=k>insert</span><span class=w> </span><span class=n>student2</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=o>//</span><span class=err>修改一条学生记录</span><span class=c1>--&gt; update
+</span><span class=c1></span><span class=n>student1</span><span class=p>.</span><span class=n>Name__c</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s1>&#39;student update&#39;</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=k>update</span><span class=w> </span><span class=n>student1</span><span class=p>;</span><span class=o>//</span><span class=n>SOQL修改记录简便写法</span><span class=err>，同</span><span class=k>Database</span><span class=p>.</span><span class=k>update</span><span class=p>(</span><span class=n>student1</span><span class=p>)</span><span class=w>
+</span><span class=w> 
+</span><span class=w></span><span class=cm>/*增加或修改一条学生记录 upsert
+</span><span class=cm>    upsert原理：upsert通过是否存在此ID来判断此条记录是否存在，
+</span><span class=cm>    1.如果不存在此ID则执行insert操作；
+</span><span class=cm>    2.如果存在并且只存在一个ID，则执行update操作；
+</span><span class=cm>    3.存在并且存在多个ID，则抛出DMLException
+</span><span class=cm>*/</span><span class=w>
+</span><span class=w></span><span class=o>//</span><span class=err>当上方执行</span><span class=w> </span><span class=n>insert语句时</span><span class=err>，</span><span class=n>Id便赋予student1</span><span class=err>，所以下方代码执行</span><span class=w> </span><span class=n>update操作</span><span class=w>
+</span><span class=w></span><span class=n>student1</span><span class=p>.</span><span class=n>Name__c</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s1>&#39;student upsert&#39;</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=n>upsert</span><span class=w> </span><span class=n>student1</span><span class=p>;</span><span class=o>//</span><span class=n>SOQL简便写法</span><span class=err>，同</span><span class=k>Database</span><span class=p>.</span><span class=n>upsert</span><span class=p>(</span><span class=n>student1</span><span class=p>);</span><span class=w>
+</span><span class=w> 
+</span><span class=w></span><span class=o>//</span><span class=err>删除一条学生记录</span><span class=w> </span><span class=k>delete</span><span class=w>
+</span><span class=w></span><span class=k>delete</span><span class=w> </span><span class=n>student2</span><span class=p>;</span><span class=o>//</span><span class=n>SOQL简便写法</span><span class=err>，同</span><span class=k>Database</span><span class=p>.</span><span class=k>delete</span><span class=p>(</span><span class=n>student2</span><span class=p>);</span><span class=w>
+</span><span class=w> 
+</span><span class=w></span><span class=o>//</span><span class=err>注意：进行</span><span class=n>DML操作时有可能发生DMLException</span><span class=err>，所以在进行</span><span class=n>DML操作时最好进行try</span><span class=p>,</span><span class=n>catch处理</span><span class=err>。</span><span class=w>
+</span><span class=w></span><span class=o>//</span><span class=n>e</span><span class=p>.</span><span class=k>g</span><span class=p>.:</span><span class=w>
+</span><span class=w></span><span class=n>try</span><span class=w> </span><span class=err>{</span><span class=w>
+</span><span class=w>      </span><span class=k>insert</span><span class=w> </span><span class=n>student1</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=err>}</span><span class=w> </span><span class=n>catch</span><span class=p>(</span><span class=n>DMLException</span><span class=w> </span><span class=n>e</span><span class=p>)</span><span class=w> </span><span class=err>{</span><span class=w>
+</span><span class=w>      </span><span class=o>//</span><span class=w> </span><span class=n>TODO</span><span class=w>
+</span><span class=w></span><span class=err>}</span><span class=w> </span><span class=n>finally</span><span class=w> </span><span class=err>{</span><span class=w>
+</span><span class=w>      </span><span class=o>//</span><span class=w> </span><span class=n>TODO</span><span class=w>
+</span><span class=w></span><span class=err>}</span><span class=w>
+</span></code></pre></td></tr></table>
+</div>
+</div><p>查询语句返回List<sobject>数据时，查询语句也可以进行相应的复杂处理，例如进行Where、include、limit等操作，以后会详细探讨SOQL语法细节和多表联查，这里仅简单描述：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-sql data-lang=sql><span class=cm>/*Apex为参数传递提供了一种便捷的方式，使用‘：’符号来声明查询语句中使用的变量，类似于Java中的PreparedStatement。查询有两种方式：
+</span><span class=cm>	第一种通过[select...]方式来查询，此种方式不利于SQL扩展，故不推荐
+</span><span class=cm>	第二种通过构造查询字符串，通过Database.query(queryString)方式来检索，此方法灵活性扩展性强，故推荐
+</span><span class=cm>*/</span><span class=w>
+</span><span class=w></span><span class=o>//</span><span class=err>查询列表</span><span class=w>
+</span><span class=w></span><span class=n>String</span><span class=w> </span><span class=n>args1</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s1>&#39;%zhang%&#39;</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=n>String</span><span class=w> </span><span class=n>args2</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s1>&#39;zhangsan&#39;</span><span class=p>;</span><span class=w>
+</span><span class=w></span><span class=n>List</span><span class=o>&lt;</span><span class=n>Student__c</span><span class=o>&gt;</span><span class=w> </span><span class=n>students</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>[</span><span class=k>select</span><span class=w> </span><span class=n>Id</span><span class=p>,</span><span class=n>Name__c</span><span class=w> </span><span class=k>from</span><span class=w> </span><span class=n>Student__c</span><span class=w> </span><span class=k>where</span><span class=w> </span><span class=n>Name__c</span><span class=w> </span><span class=k>like</span><span class=w> </span><span class=p>:</span><span class=n>args1</span><span class=w> </span><span class=k>limit</span><span class=w> </span><span class=mi>10000</span><span class=p>];</span><span class=o>//</span><span class=err>查询名称含</span><span class=n>zhang的学生列表</span><span class=w>
+</span><span class=w></span><span class=cm>/*
+</span><span class=cm>上述语句等同与:
+</span><span class=cm>String query = &#39;select Id,Name__c from Student__c where Name__c like :args1 limit 10000&#39;;
+</span><span class=cm>List&lt;Student__c&gt; students = Database.query(query);
+</span><span class=cm>*/</span><span class=w>
+</span><span class=w></span><span class=o>//</span><span class=err>查询表数据条数</span><span class=w>
+</span><span class=w></span><span class=n>String</span><span class=w> </span><span class=n>countQuery</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s1>&#39;select count(Id) from Student__c where Name__c = :args2 &#39;</span><span class=p>;</span><span class=o>//</span><span class=err>查询名称为</span><span class=n>zhangsan的学生个数</span><span class=w>
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>需要注意的是：在Force.com平台数据库中，查询不能使用'*&lsquo;符号代表全部字段，如果查询全部字段需全部列出来；而且salesforce对查询记录条数以及DML操作次数均有严格的限制，查询条数一次不能超过50000条，DML操作一次不能超过10000条，如果超过限制则抛出异常。如果需要大量的进行DML操作，请使用批处理方式进行数据处理。</strong></p>
+<hr>
+<h2 id=四多表关联下的soql以及表字段data-type详解>四、多表关联下的SOQL以及表字段Data Type详解</h2></div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>Updated on 2021-08-06</span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/salesforce-%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/index.md target=_blank>Read Markdown</a>
+</span></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://zhongyang.online/salesforce-%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/ data-title="Salesforce 零基础开发入门学习" data-hashtags=Salesforce><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://zhongyang.online/salesforce-%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/ data-hashtag=Salesforce><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=https://zhongyang.online/salesforce-%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/ data-title="Salesforce 零基础开发入门学习"><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://zhongyang.online/salesforce-%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/ data-title="Salesforce 零基础开发入门学习"><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://zhongyang.online/salesforce-%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/ data-title="Salesforce 零基础开发入门学习"><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/salesforce/>Salesforce</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/%E6%9C%89%E6%95%88%E7%BD%91%E5%9D%80/ class=prev rel=prev title=有效网址><i class="fas fa-angle-left fa-fw"></i>有效网址</a>
+<a href=/hot-keys-and-plug-ins/ class=next rel=next title="Hot Keys and Plug-ins">Hot Keys and Plug-ins<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id=comments><div id=valine class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=zhongyang.online target=_blank>Yangs</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments">
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=/lib/valine/valine.min.css><script type=text/javascript src=https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:10},comment:{valine:{appId:"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI",appKey:"WBmoGyJtbqUswvfLh6L8iEBr",avatar:"mp",el:"#valine",emojiCDN:"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/",emojiMaps:{100:"1f4af.png",alien:"1f47d.png",anger:"1f4a2.png",angry:"1f620.png",anguished:"1f627.png",astonished:"1f632.png",black_heart:"1f5a4.png",blue_heart:"1f499.png",blush:"1f60a.png",bomb:"1f4a3.png",boom:"1f4a5.png",broken_heart:"1f494.png",brown_heart:"1f90e.png",clown_face:"1f921.png",cold_face:"1f976.png",cold_sweat:"1f630.png",confounded:"1f616.png",confused:"1f615.png",cry:"1f622.png",crying_cat_face:"1f63f.png",cupid:"1f498.png",dash:"1f4a8.png",disappointed:"1f61e.png",disappointed_relieved:"1f625.png",dizzy:"1f4ab.png",dizzy_face:"1f635.png",drooling_face:"1f924.png",exploding_head:"1f92f.png",expressionless:"1f611.png",face_vomiting:"1f92e.png",face_with_cowboy_hat:"1f920.png",face_with_hand_over_mouth:"1f92d.png",face_with_head_bandage:"1f915.png",face_with_monocle:"1f9d0.png",face_with_raised_eyebrow:"1f928.png",face_with_rolling_eyes:"1f644.png",face_with_symbols_on_mouth:"1f92c.png",face_with_thermometer:"1f912.png",fearful:"1f628.png",flushed:"1f633.png",frowning:"1f626.png",ghost:"1f47b.png",gift_heart:"1f49d.png",green_heart:"1f49a.png",grimacing:"1f62c.png",grin:"1f601.png",grinning:"1f600.png",hankey:"1f4a9.png",hear_no_evil:"1f649.png",heart:"2764-fe0f.png",heart_decoration:"1f49f.png",heart_eyes:"1f60d.png",heart_eyes_cat:"1f63b.png",heartbeat:"1f493.png",heartpulse:"1f497.png",heavy_heart_exclamation_mark_ornament:"2763-fe0f.png",hole:"1f573-fe0f.png",hot_face:"1f975.png",hugging_face:"1f917.png",hushed:"1f62f.png",imp:"1f47f.png",innocent:"1f607.png",japanese_goblin:"1f47a.png",japanese_ogre:"1f479.png",joy:"1f602.png",joy_cat:"1f639.png",kiss:"1f48b.png",kissing:"1f617.png",kissing_cat:"1f63d.png",kissing_closed_eyes:"1f61a.png",kissing_heart:"1f618.png",kissing_smiling_eyes:"1f619.png",laughing:"1f606.png",left_speech_bubble:"1f5e8-fe0f.png",love_letter:"1f48c.png",lying_face:"1f925.png",mask:"1f637.png",money_mouth_face:"1f911.png",nauseated_face:"1f922.png",nerd_face:"1f913.png",neutral_face:"1f610.png",no_mouth:"1f636.png",open_mouth:"1f62e.png",orange_heart:"1f9e1.png",partying_face:"1f973.png",pensive:"1f614.png",persevere:"1f623.png",pleading_face:"1f97a.png",pouting_cat:"1f63e.png",purple_heart:"1f49c.png",rage:"1f621.png",relaxed:"263a-fe0f.png",relieved:"1f60c.png",revolving_hearts:"1f49e.png",right_anger_bubble:"1f5ef-fe0f.png",robot_face:"1f916.png",rolling_on_the_floor_laughing:"1f923.png",scream:"1f631.png",scream_cat:"1f640.png",see_no_evil:"1f648.png",shushing_face:"1f92b.png",skull:"1f480.png",skull_and_crossbones:"2620-fe0f.png",sleeping:"1f634.png",sleepy:"1f62a.png",slightly_frowning_face:"1f641.png",slightly_smiling_face:"1f642.png",smile:"1f604.png",smile_cat:"1f638.png",smiley:"1f603.png",smiley_cat:"1f63a.png",smiling_face_with_3_hearts:"1f970.png",smiling_imp:"1f608.png",smirk:"1f60f.png",smirk_cat:"1f63c.png",sneezing_face:"1f927.png",sob:"1f62d.png",space_invader:"1f47e.png",sparkling_heart:"1f496.png",speak_no_evil:"1f64a.png",speech_balloon:"1f4ac.png","star-struck":"1f929.png",stuck_out_tongue:"1f61b.png",stuck_out_tongue_closed_eyes:"1f61d.png",stuck_out_tongue_winking_eye:"1f61c.png",sunglasses:"1f60e.png",sweat:"1f613.png",sweat_drops:"1f4a6.png",sweat_smile:"1f605.png",thinking_face:"1f914.png",thought_balloon:"1f4ad.png",tired_face:"1f62b.png",triumph:"1f624.png",two_hearts:"1f495.png",unamused:"1f612.png",upside_down_face:"1f643.png",weary:"1f629.png",white_frowning_face:"2639-fe0f.png",white_heart:"1f90d.png",wink:"1f609.png",woozy_face:"1f974.png",worried:"1f61f.png",yawning_face:"1f971.png",yellow_heart:"1f49b.png",yum:"1f60b.png",zany_face:"1f92a.png",zipper_mouth_face:"1f910.png",zzz:"1f4a4.png"},enableQQ:!1,highlight:!0,lang:"en",pageSize:10,placeholder:"Your comment ...",recordIP:!0,serverURLs:"https://leancloud.hugoloveit.com",visitor:!0}},data:{"id-1":"Yangs","id-2":"Yangs"},search:{algoliaAppID:"6XQ3P51KU7",algoliaIndex:"blog_hugo",algoliaSearchKey:"956346f29ebea44363febb75d7e0315c",highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:50,type:"algolia"},typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"id-1":["id-1"],"id-2":["id-2"]},duration:-1,speed:100}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>
